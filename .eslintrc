@@ -1,0 +1,19 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "no-console": 1,
+    "no-unused-vars": [
+      1,
+      {
+        "argsIgnorePattern": " res|next|^err"
+      }
+    ],
+    "react/react-in-jsx-scope": 1
+  }
+}
