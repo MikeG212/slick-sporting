@@ -14,6 +14,7 @@
         "argsIgnorePattern": " res|next|^err"
       }
     ],
-    "react/react-in-jsx-scope": 1
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-filename-extension": 0
   }
 }
