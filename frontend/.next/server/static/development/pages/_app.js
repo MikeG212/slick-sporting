@@ -452,7 +452,7 @@ var Inner = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withCon
 })(["max-width:", ";margin:0 auto;padding:2rem;background:", ";"], function (props) {
   return props.theme.maxWidth;
 }, function (props) {
-  return props.theme.red;
+  return props.theme.offWhite;
 });
 Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["injectGlobal"])(_templateObject(), theme.black);
 
