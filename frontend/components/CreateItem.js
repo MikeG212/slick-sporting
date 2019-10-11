@@ -42,6 +42,10 @@ class CreateItem extends Component {
     this.setState({[name]: val})
   }
 
+  uploadFile = (e) => {
+    console.log("Uploading file");
+  }
+
   render() {
     return (
       <Mutation mutation={CREATE_ITEM_MUTATION} variables=
@@ -58,6 +62,17 @@ class CreateItem extends Component {
         }}>
           <Error error={error}></Error>
           <fieldset disabled={loading} aria-busy={loading}>
+            {/* <label htmlFor="file">
+              Image
+            <input
+                type="image"
+                id="file"
+                name="file"
+                placeholder="Upload an image"
+                required
+                onChange={this.uploadFile}
+              />
+            </label> */}
             <label htmlFor="title">
               Title
               <input
