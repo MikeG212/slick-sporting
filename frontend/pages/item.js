@@ -1,7 +1,8 @@
-// import SingleItem from '../components/Item';
+import SingleItem from '../components/SingleItem';
 
 const Item = (props) => {
-  return <div>This is the singe item page for {props.query.id}</div>;
+  debugger
+  return <SingleItem id={props.query.id} />;
 };
 
 export default Item;
