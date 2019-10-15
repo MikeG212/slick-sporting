@@ -48,11 +48,12 @@ class SingleItem extends Component {
           if (error) return <Error error={error} />;
           if (loading) return <p>Loading...</p>;
           if (!data.item) return <p>No Item Found for {this.props.id}</p>;
+          console.log(data);
           const item = data.item;
           return (
             <SingleItemStyles>
               <Head>
-                <title>Sick Fits | {item.title}</title>
+                <title>Slick Sporting | {item.title}</title>
               </Head>
               <img src={item.largeImage} alt={item.title} />
               <div className="details">

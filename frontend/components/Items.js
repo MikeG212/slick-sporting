@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import styled from 'styled-components';
 
 import Item from './Item';
+import Pagination from './Pagination';
 
 const ALL_ITEMS_QUERY = gql`
   query ALL_ITEMS_QUERY {
@@ -34,7 +35,7 @@ class Items extends Component {
   render() {
     return (
     <Center>
-      Items!
+      <Pagination></Pagination>
       <Query query={ALL_ITEMS_QUERY}>
         {({ data, error, loading }) => {
           console.log(data);
@@ -46,6 +47,7 @@ class Items extends Component {
           );
         }}
       </Query>
+      <Pagination></Pagination>
     </Center>);
   }
 }
