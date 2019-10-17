@@ -1,5 +1,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const { randomBytes } = require('crypto');
+const { promisify } = require('util');
 
 const Mutations = {
   async createItem(parent, args, ctx, info) {
@@ -12,7 +14,7 @@ const Mutations = {
     }, info);
 
     return item;
-  },
+  }, 
   updateItem(parent, args, ctx, info) {
     const updates = { ...args };
     delete updates.id;
@@ -67,6 +69,22 @@ const Mutations = {
   signout(parent, args, ctx, info) {
     ctx.response.clearCookie('token');
     return { message: 'Later! Keep crushing it' };
+  },
+  async requestReset(parent, { email }, ctx, info) {
+    const user = await ctx.db.query.user({ where: { email } });
+    if (!user) {
+      throw new Error(`No such user found for email ${email}`);
+    }
+    const randomBytesPromiseified = promisify(randomBytes);
+    const resetToken = (await randomBytesPromiseified(20)).toString('hex');
+    const resetTokenExpiry = Date.now() + (1000 * 60 * 60);
+    const res = await ctx.db.mutation.updateUser({
+      where: { email },
+      data: { resetToken, resetTokenExpiry }
+    });
+    console.log(res);
+    return { message: 'Thanks!' };
+
   },
 };
 
