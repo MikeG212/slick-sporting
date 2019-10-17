@@ -1,3 +1,5 @@
+const cookieParser = require('cookie-parser');
+
 require('dotenv').config({ path: 'variables.env' });
 const createServer = require('./createServer');
 const db = require('./db');
@@ -5,6 +7,8 @@ const db = require('./db');
 // console.log(process.env);
 
 const server = createServer();
+
+server.express.use(cookieParser());
 
 // TODO USE express middleware to handle JWT
 // TODO use express middleware to populate current user
