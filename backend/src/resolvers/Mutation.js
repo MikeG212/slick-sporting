@@ -84,7 +84,35 @@ const Mutations = {
     });
     console.log(res);
     return { message: 'Thanks!' };
-
+  },
+  async resetPassword(parent, { password, confirmPassword, resetToken }, ctx, info) {
+    if (password !== confirmPassword) {
+      throw new Error('Passwords don\'t match');
+    }
+    const [user] = await ctx.db.query.users({
+      where: {
+        resetToken,
+        resetTokenExpiry_gte: Date.now() - 3600000,
+      },
+    });
+    if (!user) {
+      throw new Error('This token is either invalid or expired');
+    }
+    const newPassword = await bcrypt.hash(password, 10);
+    const updatedUser = await ctx.db.mutation.updateUser({
+      where: { email: user.email },
+      data: {
+        password: newPassword,
+        resetToken: null,
+        resetTokenExpiry: null,
+      },
+    });
+    const token = jwt.sign({ userId: updatedUser.id }, process.env.APP_SECRET);
+    ctx.response.cookie('token', token, {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24 * 365,
+    });
+    return updatedUser;
   },
 };
 
