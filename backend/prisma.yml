@@ -1,4 +1,5 @@
-endpoint: ${env:PRISMA_ENDPOINT}
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://slick-sporting-prod-39f47c7151.herokuapp.com/slick-sporting-prod/prod
 datamodel: datamodel.graphql
 # secret: ${env:PRISMA_SECRET}
 hooks:
