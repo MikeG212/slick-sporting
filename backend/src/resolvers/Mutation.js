@@ -80,7 +80,7 @@ const Mutations = {
     const resetTokenExpiry = Date.now() + (1000 * 60 * 60);
     const res = await ctx.db.mutation.updateUser({
       where: { email },
-      data: { resetToken, resetTokenExpiry }
+      data: { resetToken, resetTokenExpiry },
     });
     console.log(res);
     return { message: 'Thanks!' };
