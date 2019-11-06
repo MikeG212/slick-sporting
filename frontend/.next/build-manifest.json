@@ -11,23 +11,13 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-<<<<<<< HEAD
-    "/sell": [
+    "/item": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/items": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-=======
-    "/reset": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/signup": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
->>>>>>> parent of 2e690c3a... Template out password reset email
     ]
   }
 }

@@ -34,6 +34,9 @@ const Item = styled.div`
       padding: 1rem;
     }
   }
+  a {
+    margin: 10px 0;
+  }
 `;
 
 export default Item;

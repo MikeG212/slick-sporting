@@ -1,5 +1,5 @@
-# source: https://slick-sporting-prod-39f47c7151.herokuapp.com/slick-sporting-prod/prod
-# timestamp: Fri Oct 18 2019 13:28:34 GMT-0700 (Pacific Daylight Time)
+# source: https://us1.prisma.sh/mike-gee-8080b0/slick-sporting/dev
+# timestamp: Wed Nov 06 2019 08:33:44 GMT-0800 (Pacific Standard Time)
 
 type AggregateItem {
   count: Int!

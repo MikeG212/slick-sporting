@@ -113,11 +113,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-<<<<<<< HEAD
-/******/ 	var hotCurrentHash = "b1f71925fe706662a9d2";
-=======
-/******/ 	var hotCurrentHash = "bb4ef40816d87da3a967";
->>>>>>> parent of 2e690c3a... Template out password reset email
+/******/ 	var hotCurrentHash = "11193a4ef9a4c1f96d9f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
